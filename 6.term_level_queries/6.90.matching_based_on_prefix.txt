@@ -1,0 +1,11 @@
+DELETE /products
+GET /products/_search
+
+GET /products/_search
+{
+  "query": {
+    "prefix": {
+      "tags.keyword": "Piz"
+    }
+  }
+}

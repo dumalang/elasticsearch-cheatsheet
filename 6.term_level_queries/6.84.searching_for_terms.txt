@@ -1,0 +1,19 @@
+GET /products/_search
+{
+  "query": {
+    "term": {
+      "active": {
+        "value": false
+      }
+    }
+  }
+}
+
+GET /products/_search
+{
+  "query": {
+    "term": {
+      "active": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+GET /_cat/indices?v
+
+DELETE /products
+
+PUT /products
+{
+  "settings": {
+    "number_of_shards": 3,
+    "number_of_replicas": 3
+  }
+}
+
+POST /products/_doc
+{
+  "name": "nama product",
+  "price": 1000,
+  "in_stock": 10
+}
+
+POST /products/_doc/2
+{
+  "name": "nama product 2",
+  "price": 1000,
+  "in_stock": 10
+}

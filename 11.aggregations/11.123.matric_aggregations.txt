@@ -1,0 +1,63 @@
+GET transactions/_search
+{
+  "size": 0,
+  "aggs": {
+    "total_sales": {
+      "sum": {
+        "field": "final_amount"
+      }
+    },
+    "avg_sales": {
+      "avg": {
+        "field": "final_amount"
+      }
+    },
+    "min_sales": {
+      "min": {
+        "field": "final_amount"
+      }
+    },
+    "max_sales": {
+      "max": {
+        "field": "final_amount"
+      }
+    }
+  }
+}
+
+GET transactions/_search
+{
+  "size": 0,
+  "aggs": {
+    "total_outlets": {
+      "cardinality": {
+        "field": "outlet.id"
+      }
+    }
+  }
+}
+
+GET transactions/_search
+{
+  "size": 0,
+  "aggs": {
+    "vales_count": {
+      "value_count": {
+        "field": "final_amount"
+      }
+    }
+  }
+}
+
+
+GET transactions/_search
+{
+  "size": 0,
+  "aggs": {
+    "amount_stats": {
+      "stats": {
+        "field": "final_amount"
+      }
+    }
+  }
+}

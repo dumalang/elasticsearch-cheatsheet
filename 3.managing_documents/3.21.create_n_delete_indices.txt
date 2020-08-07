@@ -1,0 +1,11 @@
+GET /_cat/indices?v
+
+DELETE /products
+
+PUT /products
+{
+  "settings": {
+    "number_of_shards": 2,
+    "number_of_replicas": 2
+  }
+}

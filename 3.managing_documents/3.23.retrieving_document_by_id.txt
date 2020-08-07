@@ -1,0 +1,12 @@
+GET /_cat/indices?v
+
+DELETE /products
+
+POST /products/_doc/2
+{
+  "name": "nama product",
+  "price": 1000,
+  "in_stock": 10
+}
+
+GET /products/_doc/2

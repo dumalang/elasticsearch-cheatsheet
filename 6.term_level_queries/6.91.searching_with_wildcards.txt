@@ -1,0 +1,24 @@
+DELETE /products
+GET /products/_search
+
+GET /products/_search
+{
+  "query": {
+    "wildcard": {
+      "tags.keyword": "Piz*"
+    }
+  }
+}
+
+GET /products/_search
+{
+  "query": {
+    "wildcard": {
+      "tags.keyword": "Piz?a"
+    }
+  }
+}
+
+
+
+

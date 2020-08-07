@@ -1,0 +1,9 @@
+GET /products/_search
+GET /products/_search
+{
+  "query": {
+    "ids": {
+      "values": ["TASpYHIBtgvz7K2mr5Pk", "XQSpYHIBtgvz7K2mr5Pm"]
+    }
+  }
+}

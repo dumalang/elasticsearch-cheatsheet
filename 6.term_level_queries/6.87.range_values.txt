@@ -1,0 +1,28 @@
+DELETE /products
+GET /products/_search
+GET /products/_search
+{
+  "query": {
+    "range": {
+      "in_stock": {
+        "gte": 50000,
+        "lte": 60000
+      }
+    }
+  }
+}
+
+GET /products/_search
+{
+  "query": {
+    "range": {
+      "created_at_date": {
+        "gte": "2020-06-01",
+        "lte": "2020-06-01",
+        "format": "yyyy-MM-dd"
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,17 @@
+GET _cat/indices?v
+
+GET /products/_doc/2
+
+POST /products/_update/2
+{
+  "doc":{
+    "in_stock": 50
+  }
+}
+
+POST /products/_update/2
+{
+  "doc":{
+    "tags": ["electronics"]
+  }
+}

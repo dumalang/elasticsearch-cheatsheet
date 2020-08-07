@@ -1,0 +1,38 @@
+DELETE /products
+GET /products/_search
+
+GET /products/_search
+{
+  "query": {
+    "range": {
+      "created_at_date": {
+        "gte": "2020-06-01||-1d",
+        "format": "yyyy-MM-dd"
+      }
+    }
+  }
+}
+
+GET /products/_search
+{
+  "query": {
+    "range": {
+      "created_at_date": {
+        "gte": "2020-06-01||-1y-1d",
+        "format": "yyyy-MM-dd"
+      }
+    }
+  }
+}
+
+
+GET /products/_search
+{
+  "query": {
+    "range": {
+      "created_at_date": {
+        "gte": "now"
+      }
+    }
+  }
+}

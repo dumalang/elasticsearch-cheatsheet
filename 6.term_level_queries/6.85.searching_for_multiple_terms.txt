@@ -1,0 +1,13 @@
+similiar with in clause in sql
+
+GET /products/_search
+{
+  "query": {
+    "terms": {
+      "name.keyword": [
+        "chicken",
+        "metal"
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+GET transactions/_search
+{
+  "size": 0,
+  "aggs": {
+    "outlets": {
+      "terms": {
+        "field": "customer.name.keyword",
+        "missing": "N/A",
+        "min_doc_count": 0,
+        "order": {
+          "_key": "asc"
+        }
+      },
+      "aggs": {
+        "status_stats": {
+          "stats": {
+            "field": "final_amount"
+          }
+        }
+      }
+    }
+  }
+}

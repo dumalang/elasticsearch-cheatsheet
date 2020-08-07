@@ -1,0 +1,12 @@
+GET /products/_search
+{
+  "query": {
+    "query_string": {
+      "query": "name:small"
+    }
+  }
+}
+
+GET /products/_search?q=name:chicken
+
+GET /products/_search?q=name:chicken AND name:metal

@@ -1,0 +1,19 @@
+POST /products/_update/5
+{
+  "script": {
+    "source": "ctx._source.in_stock++"
+  },
+  "upsert": {
+    "name": "Fan",
+    "price": 388,
+    "in_stock": 5
+  }
+}
+
+PUT /products/_doc/5
+{
+  "price": 500,
+  "name": "wkwk"
+}
+
+GET /products/_doc/5

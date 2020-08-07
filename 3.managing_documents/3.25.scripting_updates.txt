@@ -1,0 +1,39 @@
+GET _cat/indices?v
+
+GET /products/_doc/2
+
+POST /products/_update/2
+{
+  "script":{
+    "source": "ctx._source.in_stock--"
+  }
+}
+
+POST /products/_update/2
+{
+  "script":{
+    "source": "ctx._source.in_stock = 10"
+  }
+}
+
+POST /products/_update/2
+{
+  "script":{
+    "source": "ctx._source.in_stock -= params.quantity",
+    "params": {
+      "quantity": 4
+    }
+  }
+}
+
+POST /products/_update/2
+{
+  "script":{
+    "source": """
+        if (ctx.source.in_stock <= 1) {
+          ctx.op = 'delete';
+        }
+        ctx._source.in_stock--;
+      """
+  }
+}
